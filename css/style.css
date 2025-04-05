@@ -1,0 +1,465 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 720px;
+    max-width: 96%;
+    margin: 0 auto;
+    padding: 15px;
+    position: relative;
+    margin-top: -60px; /* 将整体内容上移 */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 背景样式 */
+.bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 响应式背景图 */
+.bg-desktop {
+    display: block;
+}
+
+.bg-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .bg-desktop {
+        display: none;
+    }
+    
+    .bg-mobile {
+        display: block;
+    }
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    padding: 30px 0 20px; /* 减少底部padding，上移白色容器 */
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 36px; /* 减小字体大小 */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white; /* 字体改为白色 */
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.7); /* 黑色半透明背景 */
+    padding: 10px 25px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: 6px; /* 下移0.3厘米 */
+}
+
+.subtitle {
+    font-size: 35px; /* 放大字体 */
+    font-weight: bold;
+    color: #FFD700; /* 改为黄色字体 */
+    display: block;
+    border-bottom: 3px solid #FFD700; /* 黄色下划线 */
+    padding-bottom: 5px;
+    margin: 0 auto 15px; /* 减少底部边距 */
+    width: fit-content;
+    text-align: center;
+}
+
+.team-intro {
+    font-size: 18px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin: 0 auto 10px; /* 减少底部边距 */
+    max-width: fit-content;
+    display: inline-block;
+}
+
+/* 内容区域 */
+.content {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px 30px; /* 调整顶部内边距 */
+    margin-bottom: 30px;
+    position: relative;
+    margin-top: -30px; /* 白色容器进一步上移 */
+}
+
+/* 团队简介 */
+.slogan {
+    display: none; /* 隐藏"妙思营策，营销定制" */
+}
+
+/* 副标题位置 */
+.container-subtitle {
+    margin: 20px auto;
+    margin-bottom: 40px;
+}
+
+.feature-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* 减小间距 */
+    margin-bottom: 25px;
+}
+
+.feature-btn {
+    padding: 8px 15px; /* 减小内边距 */
+    border: none;
+    border-radius: 25px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 14px; /* 缩小字体 */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* 防止按钮文字换行 */
+}
+
+.feature-btn.active {
+    background-color: #FFD700; /* 改为黄色 */
+    color: #333;
+}
+
+.feature-content {
+    display: none;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 30px;
+}
+
+.feature-content.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-text {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* 关键词高亮样式 */
+.highlight-keyword {
+    color: #E6B800; /* 深黄色，与case-tip颜色一致 */
+    font-weight: bold;
+}
+
+.feature-image {
+    width: 500px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 游戏案例 */
+.game-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.game-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.game-btn.active {
+    background-color: #FFD700; /* 改为黄色 */
+    color: #333;
+}
+
+.game-content {
+    display: none;
+}
+
+.game-content.active {
+    display: block;
+}
+
+.game-info {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    position: relative;
+}
+
+.game-info::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #FFD700, #FFC107); /* 改为黄色渐变 */
+}
+
+.game-info ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.game-info li {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.game-info li::before {
+    content: '•';
+    position: absolute;
+    left: -15px;
+    color: #FFD700; /* 改为黄色 */
+    font-weight: bold;
+}
+
+/* 轮播样式 */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-items {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.carousel-item {
+    display: none;
+    width: 100%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.carousel-item.active {
+    display: block;
+    position: relative;
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 9/16;
+    object-fit: cover;
+}
+
+.case-tip {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 16px;
+    color: #E6B800; /* 改为更深的金黄色 */
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1); /* 添加轻微文字阴影增强可读性 */
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+.carousel-prev, .carousel-next {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #FFD700; /* 改为黄色 */
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: #e0e0e0;
+}
+
+.carousel-indicator {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 联系方式 */
+.contact {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+}
+
+.email-container {
+    display: inline-flex; /* 改为inline-flex使其内部元素不换行且整体居中 */
+    align-items: center;
+    gap: 5px; /* 保持5px的间距 */
+    margin-bottom: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.email {
+    font-size: 18px;
+    color: #333;
+    white-space: nowrap; /* 确保不会换行 */
+    font-weight: bold; /* 添加粗体 */
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #FFD700; /* 黄色 */
+    padding: 0; /* 移除内边距 */
+    margin-left: 5px; /* 添加左边距确保间隔 */
+    display: inline-flex; /* 使图标对齐 */
+    align-items: center;
+    justify-content: center;
+}
+
+.handshake {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+/* 动效样式 */
+.firework {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.7);
+    animation: explode 1.2s ease-out forwards;
+    opacity: 0;
+    z-index: 100;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(15);
+        opacity: 0;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+        margin-top: -40px; /* 调整移动端上移距离 */
+    }
+    
+    header h1 {
+        font-size: 28px; /* 调整移动端字体大小 */
+        padding: 8px 15px;
+    }
+    
+    header .subtitle {
+        font-size: 24px;
+    }
+    
+    .team-intro {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+    
+    .content {
+        padding-top: 20px;
+        margin-top: -25px; /* 移动端白色容器上移 */
+    }
+    
+    .feature-tabs, .game-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .feature-image {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .carousel-container {
+        max-width: 300px;
+    }
+} 
